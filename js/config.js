@@ -1,0 +1,1 @@
+export const APIURL = 'https://whe6gelvhb.execute-api.eu-north-1.amazonaws.com/dev/todos'
