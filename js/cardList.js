@@ -11,10 +11,4 @@ export class cardList{
     addCard(card){
         this.el.prepend(card._html())
     }
-
-    loadCards(){
-        this._api.get('/').then(result => {
-            result.map(item => new TODOCard(item)).forEach(card => this.addCard(card))
-        })
-    }
 }

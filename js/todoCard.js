@@ -14,18 +14,6 @@ export class TODOCard{
         console.log(this.id)
     }
 
-    save(){
-        this._api.post('/', 
-            {
-                title: this.title,
-                description: this.description
-            }).then(result => {
-                if(result && result.id){
-                    this.id = result.id
-                }
-            })
-    }
-
     createElement(){
         const el = document
             .querySelector('#todo-card-template')
