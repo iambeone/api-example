@@ -1,17 +1,19 @@
 export class API{
     constructor( { baseUrl } ){
-        this.baseUrl = baseUrl
+        this._baseUrl = baseUrl
     }
     _fetch(url, params){
         if(params.body){
             params.headers = {
-                "Content-Type": "application/json"
+                "Content-Type": "text/json"
             }
             params.body = JSON.stringify(params.body)
         }
         return fetch(this.baseUrl + url, params)
         .then(data => {
-            return data.json()
+            if(data.ok){
+                return data
+            }
         })
         .catch(error => {
             console.error(error)

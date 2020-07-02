@@ -39,7 +39,10 @@
   </div>
   <template id="todo-card-template">
     <li class="card">
-      <button type="button" class="card__delete" aria-label="удалить">x</button>
+      <div class="actions">
+        <button type="button" class="card__like button_link" aria-label="like">♥</button><span class="card__likes-count"></span>
+        <button type="button" class="card__delete button_link" aria-label="удалить">&#11199;</button>
+      </div>
      <div class="card__description">
         <h2 data-place="" class="card__title"></h2>
         <div class="card__description-text"></div>

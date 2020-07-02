@@ -269,6 +269,7 @@
   .todos li{
     margin: 10px 0;
     border-bottom: 1px solid #ccc;
+    position: relative;
   }
   .content{
     padding: 20px;
@@ -287,4 +288,19 @@
     width: 200px;
     padding: 5px;
     margin-top: 4px;
+  }
+  .button_link{
+    background: transparent;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+  }
+  .button_link:hover{
+    color: #ff0000;
+    outline: none;
+  }
+  .actions{
+    position: absolute;
+    top: 3px;
+    right: 3px;
   }
