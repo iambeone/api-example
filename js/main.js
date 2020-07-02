@@ -1,7 +1,12 @@
 import { TODOCard } from './todoCard.js'
 import { cardList } from './cardList.js'
+import { API } from './api.js'
+import { APIURL } from './config.js'
 
-const list = new cardList('.todos')
+const api = new API( { baseUrl: APIURL } )
+
+const list = new cardList('.todos', api)
+list.loadCard()
 
 const addForm = document.querySelector('#createTodo')
 addForm.addEventListener('submit', evt => {
@@ -10,6 +15,7 @@ addForm.addEventListener('submit', evt => {
     const card = new TODOCard({
         title: data.get('title'),
         description: data.get('desc')
-    })
-    list.addCard(card)    
+    }, api)
+    card.save()
+    list.addCard(card)
 })
